@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Sol</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/game-of-thrones');
+
+        body {
+            background-color: #0a0a0a;
+            color: #d4af37;
+            font-family: 'Game of Thrones', sans-serif;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1920/4500');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        /* Add a dark gradient overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom,
+                rgba(10, 10, 10, 0.9) 0%,
+                rgba(10, 10, 10, 0.7) 50%,
+                rgba(10, 10, 10, 0.9) 100%);
+            z-index: -1;
+        }
+        
+        h2, h3, .phase-title {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        input {
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
+        }
+
+        .roadmap-box {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+
+        .hero-image {
+            height: 100vh;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .scrolling-banner {
+            overflow: hidden;
+            white-space: nowrap;
+            background: linear-gradient(to right, #1a1a1a, #2a2a2a);
+            border-top: 2px solid #d4af37;
+            border-bottom: 2px solid #d4af37;
+            position: relative;
+        }
+
+        .banner-content {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
+            padding: 1rem;
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            text-shadow: 0 0 10px #d4af37, 0 0 20px #d4af37;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .roadmap-box {
+            background: linear-gradient(145deg, rgba(42, 42, 42, 0.9), rgba(26, 26, 26, 0.9));
+            border: 2px solid #d4af37;
+            margin: 1.5rem auto;
+            padding: 2rem;
+            border-radius: 4px;
+            max-width: 800px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 8px;
+            font-weight: bold;
+        }
+
+        .phase-title {
+            color: #d4af37;
+            letter-spacing: 3px;
+            border-bottom: 1px solid #d4af37;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        input {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid #d4af37;
+            color: #fff;
+            padding: 1rem;
+            width: 100%;
+            margin-top: 0.5rem;
+            font-family: Arial, sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #fff;
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+        }
+
+        .ca-box {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ca-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(42, 42, 42, 0.9);
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.4),
+                       0 0 20px rgba(212, 175, 55, 0.2);
+            border-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Image -->
+    <div class="relative">
+        <img src="/api/placeholder/800/600" alt="Game of Thrones Theme" class="hero-image">
+    </div>
+
+    <!-- Scrolling Banner -->
+    <div class="scrolling-banner">
+        <div class="banner-content">
+            $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     
+            $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS
+        </div>
+        <div class="banner-content" aria-hidden="true">
+            $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     
+            $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS
+        </div>
+    </div>
+
+    <!-- Main Title -->
+    <div class="text-center py-12">
+        <h1 class="text-5xl md:text-7xl title">GAME OF SOL</h1>
+    </div>
+
+    <!-- Mascot Image -->
+    <div class="flex justify-center py-8">
+        <img src="/api/placeholder/300/300" alt="Game of Sol Mascot" class="rounded-lg shadow-xl">
+    </div>
+
+    <!-- CA Box -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="roadmap-box ca-box text-center py-4" onclick="copyCA()">
+            <h3 class="text-2xl tracking-wider" style="text-shadow: 0 0 10px #d4af37;">CA: COMING SOON</h3>
+        </div>
+    </div>
+
+    <!-- Roadmap -->
+    <div class="container mx-auto px-4 py-12">
+        <h2 class="text-4xl text-center mb-12 title">ROADMAP</h2>
+        
+        <!-- Phase 1 -->
+        <div class="roadmap-box">
+            <h3 class="text-2xl phase-title">PHASE I: THE DAWN</h3>
+            <input type="text" placeholder="Enter Phase 1 details..." class="rounded">
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="roadmap-box">
+            <h3 class="text-2xl phase-title">PHASE II: THE RISE</h3>
+            <input type="text" placeholder="Enter Phase 2 details..." class="rounded">
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="roadmap-box">
+            <h3 class="text-2xl phase-title">PHASE III: THE BATTLE</h3>
+            <input type="text" placeholder="Enter Phase 3 details..." class="rounded">
+        </div>
+
+        <!-- Phase 4 -->
+        <div class="roadmap-box">
+            <h3 class="text-2xl phase-title">PHASE IV: THE VICTORY</h3>
+            <input type="text" placeholder="Enter Phase 4 details..." class="rounded">
+        </div>
+    </div>
+
+    <!-- Why Game of Sol Section -->
+    <div class="container mx-auto px-4 py-12">
+        <h2 class="text-4xl text-center mb-8 title">WHY GAME OF SOL?</h2>
+        <div class="roadmap-box">
+            <input type="text" placeholder="Enter the story behind Game of Sol..." class="rounded">
+        </div>
+    </div>
+
+    <!-- Social Media Section -->
+    <div class="container mx-auto px-4 py-12">
+        <h2 class="text-4xl text-center mb-8 title">JOIN OUR COMMUNITY</h2>
+        <div class="flex justify-center gap-6 flex-wrap">
+            <div class="social-icon flex items-center justify-center" onclick="window.open('', '_blank')">
+                <img src="/api/placeholder/30/30" alt="Social 1" class="w-6 h-6">
+            </div>
+            <div class="social-icon flex items-center justify-center" onclick="window.open('', '_blank')">
+                <img src="/api/placeholder/30/30" alt="Social 2" class="w-6 h-6">
+            </div>
+            <div class="social-icon flex items-center justify-center" onclick="window.open('', '_blank')">
+                <img src="/api/placeholder/30/30" alt="Social 3" class="w-6 h-6">
+            </div>
+            <div class="social-icon flex items-center justify-center" onclick="window.open('', '_blank')">
+                <img src="/api/placeholder/30/30" alt="Social 4" class="w-6 h-6">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyCA() {
+            // This function will be updated with the actual CA code
+            const ca = "CA_CODE_HERE";
+            navigator.clipboard.writeText(ca)
+                .then(() => alert('CA copied to clipboard!'))
+                .catch(err => console.error('Failed to copy CA:', err));
+        }
+    </script>
+</body>
+</html>
