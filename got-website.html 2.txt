@@ -120,7 +120,7 @@
     <div class="content">
         <!-- Hero Image -->
         <div class="relative">
-            <img src="/api/placeholder/800/600" alt="Game of Thrones Theme" class="w-full h-screen object-cover">
+            <img src="Mynd/sit" alt="Game of Thrones Theme" class="w-full h-screen object-cover">
         </div>
 
         <!-- Scrolling Banner -->
@@ -170,7 +170,6 @@
                     <ul>
                         <li>We have pre paid Dex so we get to 80k and migrate</li>
                         <li>Then we begin initial token burn events to boost scarcity</li>
-                        <li>Expend $GOS presence to cross-chain platforms</li>
                     </ul>
                 </div>
             </div>
@@ -180,7 +179,7 @@
                 <h3 class="text-2xl tracking-wider" style="text-shadow: 0 0 10px #d4af37;">PHASE IV: THE VICTORY</h3>
                 <div class="phase-content">
                     <ul>
-                        <li>Establish $BSOL as the memecoin king of Solana</li>
+                        <li>Establish $GOS as the memecoin king of Solana</li>
                         <li>Long-term community-driven governance implementation</li>
                         <li>Do giveaways to keep spreading the word and give back to the community</li>
                     </ul>
@@ -248,7 +247,7 @@
         }
 
         // You can call this function with your image URL
-        setBackgroundImage('/api/placeholder/1920/4500');
+        setBackgroundImage(Mynd/Dreki);
     </script>
 </body>
 </html>
