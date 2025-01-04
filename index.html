@@ -7,26 +7,34 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.cdnfonts.com/css/game-of-thrones');
-
-        body {
+        
+body {
             color: #d4af37;
             font-family: 'Game of Thrones', sans-serif;
             background-color: #0a0a0a;
             min-height: 100vh;
+            background-image: url('Mynd/Dreki');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
         }
 
-        #background-container {
+        body::before {
+            content: '';
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                rgba(10, 10, 10, 0.85),
+                rgba(10, 10, 10, 0.75),
+                rgba(10, 10, 10, 0.85)
+            );
+            z-index: 0;
         }
-
+        
         .content {
             position: relative;
             z-index: 1;
@@ -239,15 +247,7 @@
                 .then(() => alert('CA copied to clipboard!'))
                 .catch(err => console.error('Failed to copy CA:', err));
         }
-
-        // Function to set background image
-        function setBackgroundImage(imageUrl) {
-            const bgContainer = document.getElementById('background-container');
-            bgContainer.style.backgroundImage = `linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), url('${imageUrl}')`;
-        }
-
-        // You can call this function with your image URL
-        setBackgroundImage('Mynd/Dreki');
+        
     </script>
 </body>
 </html>
