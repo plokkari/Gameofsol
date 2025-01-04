@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Sol</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/game-of-thrones');
+
+        body {
+            color: #d4af37;
+            font-family: 'Game of Thrones', sans-serif;
+            background-color: #0a0a0a;
+            min-height: 100vh;
+        }
+
+        #background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .scrolling-banner {
+            overflow: hidden;
+            white-space: nowrap;
+            background: linear-gradient(to right, #1a1a1a, #2a2a2a);
+            border-top: 2px solid #d4af37;
+            border-bottom: 2px solid #d4af37;
+            position: relative;
+        }
+
+        .banner-content {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
+            padding: 1rem;
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            text-shadow: 0 0 10px #d4af37, 0 0 20px #d4af37;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .roadmap-box {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.95), rgba(10, 10, 10, 0.95));
+            border: 1px solid #d4af37;
+            margin: 1.5rem auto;
+            padding: 2rem;
+            border-radius: 4px;
+            max-width: 800px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+
+        .phase-content {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+
+        .phase-content ul {
+            list-style-type: none;
+            padding-left: 1.5rem;
+        }
+
+        .phase-content li {
+            position: relative;
+            margin: 0.5rem 0;
+        }
+
+        .phase-content li:before {
+            content: "•";
+            color: #d4af37;
+            position: absolute;
+            left: -1.5rem;
+            text-shadow: 0 0 5px #d4af37;
+        }
+
+        .title {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(212, 175, 55, 0.3);
+            letter-spacing: 8px;
+            font-weight: bold;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(42, 42, 42, 0.9);
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.4),
+                       0 0 20px rgba(212, 175, 55, 0.2);
+            border-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="background-container"></div>
+    <div class="content">
+        <!-- Hero Image -->
+        <div class="relative">
+            <img src="/api/placeholder/800/600" alt="Game of Thrones Theme" class="w-full h-screen object-cover">
+        </div>
+
+        <!-- Scrolling Banner -->
+        <div class="scrolling-banner">
+            <div class="banner-content">
+                $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     
+                $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS
+            </div>
+            <div class="banner-content" aria-hidden="true">
+                $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     
+                $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS     •     $GOS
+            </div>
+        </div>
+
+        <!-- Roadmap -->
+        <div class="container mx-auto px-4 py-12">
+            <h2 class="text-4xl text-center mb-12 title">ROADMAP</h2>
+            
+            <!-- Phase 1 -->
+            <div class="roadmap-box">
+                <h3 class="text-2xl tracking-wider" style="text-shadow: 0 0 10px #d4af37;">PHASE I: THE DAWN</h3>
+                <div class="phase-content">
+                    <ul>
+                        <li>Make as much art for Game Of Sol</li>
+                        <li>Start advertising</li>
+                        <li>Build an engaged community across X and Telegram</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="roadmap-box">
+                <h3 class="text-2xl tracking-wider" style="text-shadow: 0 0 10px #d4af37;">PHASE II: THE RISE</h3>
+                <div class="phase-content">
+                    <ul>
+                        <li>Community starts spreading the word across social media, start hype for launch</li>
+                        <li>We launch on pump.fun</li>
+                        <li>Collaborate with influencers in the memecoin and Solana</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="roadmap-box">
+                <h3 class="text-2xl tracking-wider" style="text-shadow: 0 0 10px #d4af37;">PHASE III: THE BATTLE</h3>
+                <div class="phase-content">
+                    <ul>
+                        <li>We have pre paid Dex so we get to 80k and migrate</li>
+                        <li>Then we begin initial token burn events to boost scarcity</li>
+                        <li>Expend $GOS presence to cross-chain platforms</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="roadmap-box">
+                <h3 class="text-2xl tracking-wider" style="text-shadow: 0 0 10px #d4af37;">PHASE IV: THE VICTORY</h3>
+                <div class="phase-content">
+                    <ul>
+                        <li>Establish $BSOL as the memecoin king of Solana</li>
+                        <li>Long-term community-driven governance implementation</li>
+                        <li>Do giveaways to keep spreading the word and give back to the community</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Title -->
+        <div class="text-center py-12">
+            <h1 class="text-5xl md:text-7xl title">GAME OF SOL</h1>
+        </div>
+
+        <!-- Mascot Image -->
+        <div class="flex justify-center py-8">
+            <img src="/api/placeholder/300/300" alt="Game of Sol Mascot" class="rounded-lg shadow-xl">
+        </div>
+
+        <!-- CA Box -->
+        <div class="container mx-auto px-4 py-8">
+            <div class="roadmap-box ca-box text-center py-4" onclick="copyCA()">
+                <h3 class="text-2xl tracking-wider" style="text-shadow: 0 0 10px #d4af37;">CA: COMING SOON</h3>
+            </div>
+        </div>
+
+        <!-- Why Game of Sol Section -->
+        <div class="container mx-auto px-4 py-12">
+            <h2 class="text-4xl text-center mb-8 title">WHY GAME OF SOL?</h2>
+            <div class="roadmap-box">
+                <input type="text" placeholder="Enter the story behind Game of Sol..." class="w-full bg-gray-800 text-white p-3 rounded border-none focus:ring-2 focus:ring-gold">
+            </div>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="container mx-auto px-4 py-12">
+            <h2 class="text-4xl text-center mb-8 title">JOIN OUR COMMUNITY</h2>
+            <div class="flex justify-center gap-6 flex-wrap">
+                <div class="social-icon flex items-center justify-center" onclick="window.open('', '_blank')">
+                    <img src="/api/placeholder/30/30" alt="Social 1" class="w-6 h-6">
+                </div>
+                <div class="social-icon flex items-center justify-center" onclick="window.open('', '_blank')">
+                    <img src="/api/placeholder/30/30" alt="Social 2" class="w-6 h-6">
+                </div>
+                <div class="social-icon flex items-center justify-center" onclick="window.open('', '_blank')">
+                    <img src="/api/placeholder/30/30" alt="Social 3" class="w-6 h-6">
+                </div>
+                <div class="social-icon flex items-center justify-center" onclick="window.open('', '_blank')">
+                    <img src="/api/placeholder/30/30" alt="Social 4" class="w-6 h-6">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyCA() {
+            const ca = "CA_CODE_HERE";
+            navigator.clipboard.writeText(ca)
+                .then(() => alert('CA copied to clipboard!'))
+                .catch(err => console.error('Failed to copy CA:', err));
+        }
+
+        // Function to set background image
+        function setBackgroundImage(imageUrl) {
+            const bgContainer = document.getElementById('background-container');
+            bgContainer.style.backgroundImage = `linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), url('${imageUrl}')`;
+        }
+
+        // You can call this function with your image URL
+        setBackgroundImage('/api/placeholder/1920/4500');
+    </script>
+</body>
+</html>
